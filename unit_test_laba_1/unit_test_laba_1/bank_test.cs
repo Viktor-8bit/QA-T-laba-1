@@ -58,8 +58,8 @@ namespace unit_test_laba_1
             Bank_account expected_bank = bank.get_account("3456 7890 1234 5678");
             decimal excepted_balance = expected_bank.Balance;
             
-            expected_bank.cash_money(100);
             expected_bank.deposit_money(900);
+            expected_bank.cash_money(100);
 
             Assert.AreEqual(expected_bank.deposit_money(900), operation_result.error);
             Assert.AreEqual(expected_bank.cash_money(100), operation_result.error);
