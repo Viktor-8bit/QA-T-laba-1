@@ -33,7 +33,7 @@ namespace unit_test_laba_1
             var bank_account_freeze = new Bank_account(new User("Анна", "Андреевна", "Ахматова"), "3456 7890 1234 5678");
 
             // кладем 500.91 денег на счет 3456 7890 1234 5678
-            bank_account_freeze.deposit_money(500.91M);
+            bank_account_freeze.deposit_money(1500M);
             bank_account_freeze.freeze_bank_account();
 
             bank.accounts.Add(bank_account_freeze);
@@ -58,9 +58,7 @@ namespace unit_test_laba_1
             Bank_account expected_bank = bank.get_account("3456 7890 1234 5678");
             decimal excepted_balance = expected_bank.Balance;
             
-            expected_bank.deposit_money(900);
-            expected_bank.cash_money(100);
-
+ 
             Assert.AreEqual(expected_bank.deposit_money(900), operation_result.error);
             Assert.AreEqual(expected_bank.cash_money(100), operation_result.error);
 
