@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FAxHfd/x00c4w3PA5zLr2vi7UuDI0+ya1CelhbVeDxXDzHu/m2tXigeVNjgpGKOYPx1nbIV4xltUFAltERnEAw==",
+  "dgSpecHash": "8WIw7ruktTNGrTDknO7NtjWAAPM3EdS6MB745hfE+CLe7rEqosXKKfvU+DQSRAC3oTnZktWwCxFOQs6/e6g8SA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\512\\source\\repos\\unit_test_laba_1\\unit_test_laba_1\\unit_test_laba_1.csproj",
+  "projectFilePath": "C:\\Users\\512\\Desktop\\QA laba 1\\QA-T-laba-1\\unit_test_laba_1\\unit_test_laba_1\\unit_test_laba_1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\512\\.nuget\\packages\\microsoft.codecoverage\\17.7.2\\microsoft.codecoverage.17.7.2.nupkg.sha512",
     "C:\\Users\\512\\.nuget\\packages\\microsoft.net.test.sdk\\17.7.2\\microsoft.net.test.sdk.17.7.2.nupkg.sha512",

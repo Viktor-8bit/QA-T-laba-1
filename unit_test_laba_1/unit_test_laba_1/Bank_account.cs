@@ -31,13 +31,7 @@ namespace unit_test_laba_1
 
         protected decimal balance    { get; set; }
 
-        public decimal Balance
-        {
-            get
-            {
-                return balance;
-            }
-        }
+        public decimal Balance { get { return balance; } }
 
         public Bank_account(User user, string accaunt_number)
         {

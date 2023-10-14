@@ -22,7 +22,7 @@ namespace unit_test_laba_1
         [SetUp]
         protected void SetUp()
         {
-
+            // задаем данные для тестирования 
             this.bank.accounts = new List<Bank_account>();
             this.ba1 = new Bank_account(new User("Александр", "Александрович", "Пушкин"), "6123 9876 5432 1012");
  

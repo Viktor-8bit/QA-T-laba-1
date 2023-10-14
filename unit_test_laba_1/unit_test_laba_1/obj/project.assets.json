@@ -904,11 +904,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\512\\source\\repos\\unit_test_laba_1\\unit_test_laba_1\\unit_test_laba_1.csproj",
+      "projectUniqueName": "C:\\Users\\512\\Desktop\\QA laba 1\\QA-T-laba-1\\unit_test_laba_1\\unit_test_laba_1\\unit_test_laba_1.csproj",
       "projectName": "unit_test_laba_1",
-      "projectPath": "C:\\Users\\512\\source\\repos\\unit_test_laba_1\\unit_test_laba_1\\unit_test_laba_1.csproj",
+      "projectPath": "C:\\Users\\512\\Desktop\\QA laba 1\\QA-T-laba-1\\unit_test_laba_1\\unit_test_laba_1\\unit_test_laba_1.csproj",
       "packagesPath": "C:\\Users\\512\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\512\\source\\repos\\unit_test_laba_1\\unit_test_laba_1\\obj\\",
+      "outputPath": "C:\\Users\\512\\Desktop\\QA laba 1\\QA-T-laba-1\\unit_test_laba_1\\unit_test_laba_1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\512\\AppData\\Roaming\\NuGet\\NuGet.Config",
