@@ -33,13 +33,7 @@ namespace unit_test_laba_1
             my_account.deposit_money(234.40M);
 
             print(my_account);
-
-
-            my_account.freeze_bank_account();
-
-            Console.WriteLine(my_account.deposit_money(3242432342323));
-            print(my_account);
-
+            
         }
     }
 }

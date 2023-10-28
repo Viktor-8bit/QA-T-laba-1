@@ -1,0 +1,4 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6fde9ac9_002D2fb0_002D45e3_002Da9e7_002D1ba733a24684/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="deposit_moneyTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1" Presentation="&amp;lt;unit_test_laba_1Tests1&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
