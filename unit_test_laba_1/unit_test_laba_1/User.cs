@@ -9,21 +9,25 @@ namespace unit_test_laba_1
     public class User : ICanPrint
     {
 
-        protected string first_name;
-        protected string patronymic;
-        protected string last_name;
 
-        public User(string name, string patronymic, string last_name) { 
-            this.first_name = name;
-            this.patronymic = patronymic;
-            this.last_name = last_name;
-        }
+            protected string first_name;
+            protected string patronymic;
+            protected string last_name;
 
-        public string print()
-        {
-            return $"{first_name} {patronymic} {last_name}";
-        }
+            public User(string name, string patronymic, string last_name) { 
+                if (name.Equals("") || patronymic.Equals(""))
+                {
+                    throw new ArgumentException($"{nameof(name)} {nameof(patronymic)} ошибка обязательных полей для заполнения");
+                }
+                this.first_name = name;
+                this.patronymic = patronymic;
+                this.last_name = last_name;
+            }
 
+            public string print()
+            {
+                return $"{first_name} {patronymic} {last_name}";
+            }
 
     }
 }

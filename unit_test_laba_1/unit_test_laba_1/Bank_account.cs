@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace unit_test_laba_1
@@ -33,10 +34,20 @@ namespace unit_test_laba_1
 
         public decimal Balance { get { return balance; } }
 
+        // формат банковского номера 5213 8765 3456 7890
         public Bank_account(User user, string accaunt_number)
         {
-            this.account_number = accaunt_number;
-            this.User = user;
+            Regex regex = new Regex("[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}");
+            var pattern = @"\b\d{4} \d{4} \d{4} \d{4}\b";
+
+            if (Regex.IsMatch(accaunt_number, pattern) && accaunt_number.Length == 19)
+            {
+                this.account_number = accaunt_number;
+                this.User = user;
+            } else
+            {
+                throw new ArgumentException($"{nameof(accaunt_number)} неправильное значение номера"); 
+            }
         }
 
         // накинуть деньги
@@ -48,8 +59,10 @@ namespace unit_test_laba_1
                 this.balance += money;
                 return operation_result.success;
             }
-
-            return operation_result.error;
+            else
+            {
+                throw new InvalidOperationException($"{nameof(is_freez)} {nameof(money)} аневерные аргументы или счет заморожен");
+            }
         }
 
         // обналичить деньги
@@ -60,8 +73,10 @@ namespace unit_test_laba_1
                 this.balance -= cash;
                 return operation_result.success;
             }
-
-            return operation_result.error;
+            else
+            {
+                throw new InvalidOperationException($"{nameof(is_freez)} {nameof(cash)} аневерные аргументы или счет заморожен");
+            }
         }
 
         public void freeze_bank_account() 

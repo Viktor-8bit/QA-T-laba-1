@@ -24,10 +24,8 @@ namespace unit_test_laba_1
         {
             Bank Tinkow = new Bank();
 
-            Tinkow.accounts = new List<Bank_account>()
-            {
-                new Bank_account(new User("Михаил", "Юрьевич", "Лермонтов"),        "5213 8765 3456 7890"),
-            };
+            Tinkow.add_account(new Bank_account(new User("Михаил", "Юрьевич", "Лермонтов"), "5213 8765 3456 7890"));
+            Tinkow.add_account(new Bank_account(new User("Александр", "Васильевич", "Суворов"), "5213 8765 3456 7891"));
 
             var my_account = Tinkow.get_account("5213 8765 3456 7890");
 
@@ -41,7 +39,6 @@ namespace unit_test_laba_1
 
             Console.WriteLine(my_account.deposit_money(3242432342323));
             print(my_account);
-
 
         }
     }
