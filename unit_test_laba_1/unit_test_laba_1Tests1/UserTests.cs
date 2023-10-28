@@ -14,6 +14,7 @@ namespace unit_test_laba_1.Tests
 
         #region "Тесты Алексея Ткачева"
 
+
         // проверка исключений
             [TestMethod()]
             public void user_constructor_throw()
