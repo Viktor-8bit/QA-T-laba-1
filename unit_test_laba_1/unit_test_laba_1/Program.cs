@@ -33,7 +33,12 @@ namespace unit_test_laba_1
             my_account.deposit_money(234.40M);
 
             print(my_account);
-            
+
+            //for (decimal cash_money = 1M; cash_money < Decimal.MaxValue / 4.5M; cash_money *= 4.5M)
+            //{
+            //    Console.WriteLine(Decimal.MaxValue - cash_money);
+            //}
+
         }
     }
 }
