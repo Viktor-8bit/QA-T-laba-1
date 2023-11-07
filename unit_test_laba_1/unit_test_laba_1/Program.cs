@@ -8,18 +8,6 @@ namespace unit_test_laba_1
     public class Program
     {
 
-        static void print(object obj)
-        {
-            Console.WriteLine(obj.ToString());
-            Console.WriteLine();
-        }
-
-        static void print(ICanPrint obj)
-        {
-            Console.WriteLine(obj.print());
-            Console.WriteLine();
-        }
-
         private static void Main(string[] args)
         {
             Bank Tinkow = new Bank();
