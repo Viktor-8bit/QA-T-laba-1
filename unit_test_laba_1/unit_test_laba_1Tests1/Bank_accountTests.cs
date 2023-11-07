@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
 
 namespace unit_test_laba_1.Tests
 {
@@ -19,7 +20,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void Bank_account_constructor()
         {
-            Bank_account test_bank_account = new Bank_account(new User("Ли", "Цзи", ""), "4356 1345 8891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_bank_account = new Bank_account(mock_user.Object, "4356 1345 8891 3456");
             Assert.IsNotNull(test_bank_account);
         }
 
@@ -28,7 +32,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void Bank_account_constructor_throw()
         {
-            Assert.ThrowsException<System.ArgumentException>(() => new Bank_account(new User("Ли", "Цзи", ""), "23423  3224332 4356 1345 8891 3456123"));
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ли Цзи ");
+
+            Assert.ThrowsException<System.ArgumentException>(() => new Bank_account(mock_user.Object, "23423  3224332 4356 1345 8891 3456123"));
         }
 
         // стандартное поведение метода print
@@ -36,7 +43,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void printTest()
         {
-            Bank_account test_bank_account = new Bank_account(new User("Зенон", "Элейский", ""), "4356 1345 8891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Зенон Элейский ");
+
+            Bank_account test_bank_account = new Bank_account(mock_user.Object, "4356 1345 8891 3456"); // new User("Зенон", "Элейский", "")
 
             Assert.AreEqual(" user: Зенон Элейский ; \n user_balance: 0$; \n serial nuber: 4356 1345 8891 3456 ", test_bank_account.print());
         }
@@ -53,7 +63,10 @@ namespace unit_test_laba_1.Tests
         }
         private void DepositOneValue(decimal deposit_money)
         {
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
             test_account.deposit_money(deposit_money);
             Assert.AreEqual(test_account.Balance, deposit_money);
         }
@@ -63,7 +76,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void deposit_moneyTest_2()
         {
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
             test_account.deposit_money(350.0M);
             Assert.AreEqual(test_account.Balance, 350.0M);
         }
@@ -73,7 +89,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void deposit_moneyTest_throw()
         {
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
 
             test_account.deposit_money(350.0M);
 
@@ -96,7 +115,10 @@ namespace unit_test_laba_1.Tests
         }
         private void CashOneValue(decimal cash_money)
         {
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
             test_account.deposit_money(Decimal.MaxValue);
             test_account.cash_money(cash_money);
             Assert.AreEqual(test_account.Balance, Decimal.MaxValue - cash_money);
@@ -107,7 +129,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void cash_moneyTest_2()
         {
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
 
             test_account.deposit_money(350.0M);
             test_account.cash_money(150.67M);
@@ -120,7 +145,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void cash_moneyTest_throw()
         {
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
+
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
 
             test_account.deposit_money(350.0M);
             test_account.cash_money(150.67M);
@@ -135,8 +163,10 @@ namespace unit_test_laba_1.Tests
         [TestMethod()]
         public void freeze_bank_accountTest()
         {
+            var mock_user = new Mock<IUser>();
+            mock_user.Setup(x => x.print()).Returns("Ньютон Лаэртович ");
 
-            Bank_account test_account = new Bank_account(new User("Ньютон", "Лаэртович", ""), "4356 1345 5891 3456");
+            Bank_account test_account = new Bank_account(mock_user.Object, "4356 1345 5891 3456");
 
             test_account.deposit_money(350.0M);
             test_account.cash_money(150.67M);

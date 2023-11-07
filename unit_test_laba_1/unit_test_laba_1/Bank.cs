@@ -9,10 +9,10 @@ namespace unit_test_laba_1
     public class Bank
     {
 
-        protected List<Bank_account> accounts { get; set; } = new List<Bank_account>();
+        protected List<IBank_account> accounts { get; set; } = new List<IBank_account>();
 
 
-        public void add_account(Bank_account account)
+        public void add_account(IBank_account account)
         {
             if (this.accounts.Count == 0)
             {
@@ -28,9 +28,9 @@ namespace unit_test_laba_1
             }
         }
 
-        public Bank_account? get_account(string account_number)
+        public IBank_account? get_account(string account_number)
         {
-            var account = accounts.FirstOrDefault<Bank_account>(account => account.account_number == account_number);
+            var account = accounts.FirstOrDefault<IBank_account>(account => account.account_number == account_number);
 
             if (account == null)
             {

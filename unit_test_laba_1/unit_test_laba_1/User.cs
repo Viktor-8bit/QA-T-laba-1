@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace unit_test_laba_1
 {
-    public class User : ICanPrint
+    public class User : IUser
     {
 
+        public string first_name { get; private set; }
+        public string patronymic { get; private set; }
+        public string last_name { get; private set; }
 
-            protected string first_name;
-            protected string patronymic;
-            protected string last_name;
-
-            public User(string name, string patronymic, string last_name) { 
+        public User(string name, string patronymic, string last_name) { 
                 if (name.Equals("") || patronymic.Equals(""))
                 {
                     throw new ArgumentException($"{nameof(name)} {nameof(patronymic)} ошибка обязательных полей для заполнения");
@@ -24,7 +23,8 @@ namespace unit_test_laba_1
                 this.last_name = last_name;
             }
 
-            public string print()
+
+        public string print()
             {
                 return $"{first_name} {patronymic} {last_name}";
             }

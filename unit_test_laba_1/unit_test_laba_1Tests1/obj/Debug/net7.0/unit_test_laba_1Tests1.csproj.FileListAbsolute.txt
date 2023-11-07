@@ -114,3 +114,8 @@ C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Test
 C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\obj\Debug\net7.0\unit_test_laba_1Tests1.pdb
 C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\obj\Debug\net7.0\unit_test_laba_1Tests1.genruntimeconfig.cache
 C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\obj\Debug\net7.0\ref\unit_test_laba_1Tests1.dll
+C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\bin\Debug\net7.0\Moq.dll
+C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\512\Desktop\QA laba 1\QA-T-laba-1\unit_test_laba_1\unit_test_laba_1Tests1\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll

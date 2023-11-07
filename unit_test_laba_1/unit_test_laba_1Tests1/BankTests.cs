@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Principal;
 
+using Moq;
+
 namespace unit_test_laba_1.Tests
 {
     [TestClass()]
@@ -19,10 +21,17 @@ namespace unit_test_laba_1.Tests
             public void get_accountTest()
             {
                 Bank test_bank = new Bank();
-            
-                test_bank.add_account(new Bank_account(new User("Джордж Смит", "Паттон", ""), "5213 8765 3456 7890"));
+
+
+                var mock_bank_account_A = new Mock<IBank_account>();
+                mock_bank_account_A.Setup(x => x.account_number).Returns("5213 8765 3456 7890");
+
+                var mock_bank_account_B = new Mock<IBank_account>();
+                mock_bank_account_B.Setup(x => x.account_number).Returns("5213 8765 3456 7890");
+
+                test_bank.add_account(mock_bank_account_A.Object);
                 
-                Assert.ThrowsException<System.ArgumentException>(() => test_bank.add_account(new Bank_account(new User("Александр", "Васильевич", "Суворов"), "5213 8765 3456 7890")) );
+                Assert.ThrowsException<System.ArgumentException>(() => test_bank.add_account(mock_bank_account_B.Object));
 
             }
 
@@ -32,13 +41,14 @@ namespace unit_test_laba_1.Tests
             {
                 Bank test_bank = new Bank();
 
-                Bank_account test_bank_Account = new Bank_account(new User("Джордж Смит", "Паттон", ""), "5213 8765 3456 7890");
+                var mock_bank_account_A = new Mock<IBank_account>();
+                mock_bank_account_A.Setup(x => x.account_number).Returns("5213 8765 3456 7890");
 
-                test_bank.add_account(test_bank_Account);
+                test_bank.add_account(mock_bank_account_A.Object);
 
-                Bank_account? delta_bank_account = test_bank.get_account("5213 8765 3456 7890");
+                IBank_account? delta_bank_account = test_bank.get_account("5213 8765 3456 7890");
 
-                Assert.AreEqual(test_bank_Account, delta_bank_account);
+                Assert.AreEqual(mock_bank_account_A.Object, delta_bank_account);
 
             }
 

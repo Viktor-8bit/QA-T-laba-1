@@ -13,7 +13,7 @@ namespace unit_test_laba_1
         error,
     }
 
-    public class Bank_account : ICanPrint
+    public class Bank_account : IBank_account
     {
 
         protected bool is_freez { get; set; } = false;
@@ -26,7 +26,7 @@ namespace unit_test_laba_1
             }
         }
 
-        public User User             { get; }
+        public IUser User             { get; }
         
         public string account_number { get; }
 
@@ -35,7 +35,7 @@ namespace unit_test_laba_1
         public decimal Balance { get { return balance; } }
 
         // формат банковского номера 5213 8765 3456 7890
-        public Bank_account(User user, string accaunt_number)
+        public Bank_account(IUser user, string accaunt_number)
         {
             Regex regex = new Regex("[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}");
             var pattern = @"\b\d{4} \d{4} \d{4} \d{4}\b";
