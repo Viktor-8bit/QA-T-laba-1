@@ -17,18 +17,26 @@ namespace unit_test_laba_1.Tests
 
         // проверка исключений
             [TestMethod()]
-            public void user_constructor_throw()
-            {
-                Assert.ThrowsException<System.ArgumentException>(() => new User("", "", "Моракс") );
-            }
+            [DataRow("", "", "Семенов")]
+            [DataRow("", "", "Артемов")]
+            [DataRow("", "", "Алессев")]
+            [DataRow("", "", "Сергеевич")]
+            public void user_constructor_throw(string name, string patronymic, string last_name)
+                {
+                    Assert.ThrowsException<System.ArgumentException>(() => new User(name, patronymic, last_name) );
+                }
 
         // стандартное поведение метода
             [TestMethod()]
-            public void player_print()
+            [DataRow("Алексей", "Кожевников", "")]
+            [DataRow("Алекс", "Потехин", "Генадиевич")]
+            [DataRow("Иван", "Ткачев", "Виталиевич")]
+            [DataRow("Максим", "Конавалов", "Алексеевич")]
+            public void player_print(string name, string patronymic, string last_name)
             {
-                User test_user = new User("Тарталья", "Чайльд", "Петрович");
+                User test_user = new User(name, patronymic, last_name);
 
-                Assert.AreEqual(test_user.print(), "Тарталья Чайльд Петрович");
+                Assert.AreEqual(test_user.print(), $"{name} {patronymic} {last_name}");;
             }
 
         #endregion
